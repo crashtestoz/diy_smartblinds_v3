@@ -261,8 +261,8 @@ void getHTMLstatus(){
   HTMLstatus ="<div class=\"koobee lavender\"><p style=\"text-align:center;\">"\
   "Open LIMIT is set to: "+String(eepromVar.MAXsteps)+"<br>"\
   "Current position is: "+String(eepromVar.CURsteps)+"<br>"\
-  "Open position is: "+String(eepromVar.CURpercent)+"%<br>"\
-  "Orentation is: "+String(eepromVar.Orientation)+"<br>";
+  "Open position is: "+String(eepromVar.CURpercent)+"%<br>";
+  //"Orentation is: "+String(eepromVar.Orientation)+"<br>";
   //"Light level is: "+String(eepromVar.LUXstate)+"</p></div>";
 }
 // ------------------------------------------------------------------------
@@ -582,7 +582,7 @@ void moveMotor(int moveSteps, int dir){
     Serial.println(moveSteps);
 #endif
 
-  //Move the motor number of steps, for normal opperation steps = 1 during setup steps = 100
+  //Move the motor number of steps, during setup steps = 100
   for(int x = 0; x < moveSteps; x++) {
     digitalWrite(stepPIN, HIGH); 
     delayMicroseconds(5000); 

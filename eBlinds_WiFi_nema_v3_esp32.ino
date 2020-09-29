@@ -13,6 +13,7 @@
 #include <WiFiManager.h>
 
 //needed for library
+#include <DNSServer.h>
 #include <WebServer.h>
 
 //#define DEBUG

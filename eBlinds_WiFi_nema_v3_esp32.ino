@@ -567,7 +567,7 @@ void advanceBlinds() {
 
 void moveMotor(int moveSteps, int dir){
 
-  digitalWrite(sleepPIN,LOW); //Wake the A4988 from sleep
+  digitalWrite(sleepPIN,HIGH); //Wake the A4988 from sleep
   
   if (dir == clockwise){
     digitalWrite(dirPIN,HIGH); //Changes the rotations direction to CW
@@ -590,7 +590,7 @@ void moveMotor(int moveSteps, int dir){
     delayMicroseconds(5000);
     yield(); //important to allow the ESP8266 watchdog inturupt 
   }
-  digitalWrite(sleepPIN,HIGH); //put the A4988 to sleep
+  digitalWrite(sleepPIN,LOW); //put the A4988 to sleep
 }
 
 // ------------------------------------------------------------------------
@@ -616,7 +616,7 @@ void setup() {
   pinMode(sleepPIN,OUTPUT);
   
   //digitalWrite(hotPIN, LOW);
-  digitalWrite(sleepPIN, HIGH); //Put the motor to sleep when not in opperation
+  digitalWrite(sleepPIN, LOW); //Put the motor to sleep when not in opperation
   
   // initialize the serial port:
   Serial.begin(115200);
@@ -754,7 +754,7 @@ void loop() {
   //} else {
   //    if (moveDone){
         //Make sure motor is Powered off and wait for a server responce
-  //      digitalWrite(sleepPIN,HIGH); //put the A4988 to sleep
+  //      digitalWrite(sleepPIN,LOW); //put the A4988 to sleep
   //      moveDone = false;
   //  }
  // }
